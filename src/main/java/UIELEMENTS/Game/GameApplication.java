@@ -171,7 +171,9 @@ public class GameApplication {
 
 	@PostMapping("/actors")
 	public ResponseEntity<Actor> createActor(@RequestBody Actor actor) {
-		Actor actor1 = actorRepository.save(actor);
+		Actor actor1 = actor;
+		//int id, String firstname, String lastname
+		Actor actor2 = actorRepository.save(actor);
 		return ResponseEntity.ok(actor1);
 	}
 }
